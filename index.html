@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+
+  <title>Product List</title>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <h1>Desserts</h1>
+      <div class="content">
+        <div class="product" id="productContainer">
+        </div>
+
+        <div class="check-out">
+          <h3>Your Cart <span id="cart-item-len">X</span> </h3>
+          <div class="cart" id="cart-container">
+            <div class="check-out-item">
+              <div class="product-content">
+                <h6>${item.name}</h6>
+                <p>
+                  <span id="product-quantity">${item.quantity}x </span>
+                  <span id="product-price-1"> @ $${item.price.toFixed(2)} </span>
+                  <span id="sub-total-price">${(item.quantity * item.price).toFixed(
+                    2
+                    )}</span>
+                </p>
+              </div>
+              <div class="remove-item">
+                <button class="remove" data-id="${item.id}">&times;</button>
+              </div>
+
+            </div>
+          </div>
+          <div class="total-container">
+            <div class="total">
+              <h4>Order Total: </h4>
+              <h2 id="total-price">0.00 $</h2>
+            </div>
+            <div class="confirm">
+              <button class="checkout-btn" id="checkout">Confirm Order</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </main>
+
+  <div class="modal-container hide " id="modal-container">
+    <div class="modal">
+      <div>
+        <img src="images/icon-order-confirmed.svg" alt="">
+      </div>
+      <div class="modal-content">
+        <h2>Order Confirmed</h2>
+        <p>We hope you enjoy your food !</p>
+      </div>
+      <div class="modal-cart-confirmation">
+        <div class="cart-confirmation" id="cart-confirmation">
+
+        </div>
+      </div>
+      <div class="confirm">
+        <button class="checkout-btn" id="checkout-confirm" onclick="window.location.reload()"> Start New Order</button>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
